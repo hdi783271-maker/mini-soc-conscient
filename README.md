@@ -1,157 +1,79 @@
-🌱 Mini SOC Personnel Conscient
 
-Un projet open source qui transforme la cybersécurité en une expérience éthique, pédagogique et consciente.
+Mini SOC Personnel Conscient
 
-
----
-
-🚀 Qu’est-ce que le Mini SOC Conscient ?
-
-Le Mini SOC Personnel Conscient est une solution légère de cybersécurité conçue pour :
-
-Détecter les anomalies réseau en temps réel (routeurs domestiques, petits environnements).
-
-Expliquer chaque alerte de manière claire et compréhensible.
-
-Agir de façon intelligente (isoler une IP, activer un kill switch, proposer des recommandations).
-
-Enseigner en transformant chaque détection en une leçon de cybersécurité pour l’utilisateur.
-
+Un projet open source de cybersécurité éthique et pédagogique basé sur Raspberry Pi et TinyML.
+Ce projet vise à protéger les utilisateurs tout en enseignant la cybersécurité de manière simple et accessible.
 
 
 ---
 
-🔐 Philosophie
+🚀 Objectifs du projet
 
-Edge-first : toutes les données restent locales (Raspberry Pi, PC personnel).
+Détection des anomalies réseau avec un pipeline hybride (Isolation Forest + Autoencodeur).
 
-Privacy by Design : aucune donnée n’est envoyée dans le cloud.
+Interface pédagogique (Dashboard) expliquant chaque alerte avec un Pourquoi clair.
 
-Éthique : un outil au service de l’utilisateur, pas des grandes plateformes.
+Actions locales immédiates : Isoler IP, Kill Switch, Whitelist.
 
-Pédagogie : chaque alerte devient une explication, un apprentissage.
-
-
-> « La cybersécurité doit être humaine, éthique et consciente. » — Azizi Mahdi
-
+Déploiement léger et respectueux de la vie privée sur Raspberry Pi.
 
 
 
 ---
 
-🧠 Architecture du Pipeline
+🛠️ Technologies utilisées
+
+Python (FastAPI, Scikit-learn, TensorFlow Lite).
+
+React + Tailwind pour le tableau de bord (Progressive Web App).
+
+SQLite pour la gestion locale des règles.
+
+iptables/nftables pour la gestion du pare-feu.
 
 
 
-1. Trafic réseau → capturé en temps réel (Zeek, tshark).
+---
+
+📚 Roadmap
+
+1. Phase 1 : Prototype MVP – Isolation Forest + UI simple.
 
 
-2. Isolation Forest → filtre rapide pour détecter les anomalies évidentes.
+2. Phase 2 : Ajout Autoencodeur pour réduire les faux positifs.
 
 
-3. Autoencoder → analyse fine des anomalies pour réduire les faux positifs.
+3. Phase 3 : Intelligence pédagogique – Explications détaillées.
 
 
-4. Dashboard Conscient → interface simple (vert/rouge + explications + actions).
+4. Phase 4 : Communauté & open source.
 
 
 
 
 ---
 
-🎯 Cas d’usage (MVP)
+📖 Licence
 
-Premier cas concret testé : détection de compromission d’un routeur domestique.
-
-DNS anormal 🚨
-
-Connexion persistante suspecte 🕵️‍♂️
-
-Port mapping UPnP inhabituel ⚡
-
+Projet sous GPL v3 – 2025
+Copyright (C) Azizi Mahdi – Mini SOC Personnel Conscient (L’Élève Conscient)
 
 
 ---
 
-📊 Roadmap
+👣 Mon Credo : L’Empreinte
 
-Phase 1 : Prototype MVP → Isolation Forest + interface simple.
-
-Phase 2 : Optimisation → ajout de l’autoencoder, réduction des faux positifs.
-
-Phase 3 : Pédagogie → explications claires + feedback utilisateur.
-
-Phase 4 : Communauté → ouverture open source, contributions GitHub, workshops.
+> « L’empreinte : laisser une trace consciente, humaine et durable. »
 
 
 
----
+Ce projet n’est pas seulement du code.
+C’est une philosophie d’élève conscient :
 
-🛠️ Stack technique
+Apprendre humblement,
 
-Langage : Python 3
+Partager librement,
 
-Capture réseau : Zeek, tshark
+Construire éthiquement,
 
-Détection : Scikit-learn (Isolation Forest), TensorFlow Lite (Autoencoder TinyML)
-
-Dashboard : FastAPI (backend) + React + Tailwind (frontend, PWA)
-
-Base locale : SQLite (stockage règles et apprentissage utilisateur)
-
-
-
----
-
-📦 Installation (MVP)
-
-1. Cloner le dépôt :
-
-git clone https://github.com/votre-compte/mini-soc-conscient.git
-cd mini-soc-conscient
-
-
-2. Créer l’environnement virtuel :
-
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-
-3. Lancer le dashboard :
-
-uvicorn src.dashboard.app:app --reload
-
-
-4. Ouvrir http://mini-soc.local dans le navigateur.
-
-
-
-
----
-
-⚖️ Licence
-
-Ce projet est distribué sous licence GPL v3.
-Vous êtes libres de l’utiliser, de le modifier, et de le partager — à condition que toutes les versions restent libres et ouvertes.
-
-Auteur original : Azizi Mahdi (L’Élève Conscient)
-
-
----
-
-🌍 Contribution
-
-Les contributions sont les bienvenues !
-
-Ouvrez une Issue pour poser une question ou signaler un bug.
-
-Proposez une Pull Request pour ajouter une fonctionnalité.
-
-Participez à la discussion dans l’onglet Discussions.
-
-
-
----
-
-✨ Mini SOC Conscient n’est pas seulement un projet de cybersécurité, c’est un mouvement d’apprentissage.
+Et laisser un savoir utile aux générations futures.
